@@ -16,11 +16,11 @@ public class DynamicArray<String> {
         data = new Object[initialCapacity];
     }
 
-    public String get(int index) {
+    public String get(int index) { // O(1)
         return (String) data[index];
     }
 
-    public void set(int index, String value) {
+    public void set(int index, String value) { // O(1)
         data[index] = value;
     }
 
@@ -32,7 +32,7 @@ public class DynamicArray<String> {
         }
 
         // Copy up
-        for (int j = size; j > index; j--) {
+        for (int j = size; j > index; j--) { // O(n)
             data[j] = data[j - 1];
         }
 
@@ -41,7 +41,7 @@ public class DynamicArray<String> {
         size++;
     }
 
-    private void resize() {
+    private void resize() { // O(n)
         Object[] newData = new Object[initialCapacity * 2];
         for (int i = 0; i < initialCapacity; i++) {
             newData[i] = data[i];
@@ -50,11 +50,11 @@ public class DynamicArray<String> {
         initialCapacity = initialCapacity * 2;
     }
 
-    public int size() {
+    public int size() { // O(1)
         return size;
     }
 
-    public void print() {
+    public void print() { // O(n)
         for (int i = 0; i < size; i++) {
             System.out.println("data[i] = " + data[i]);
         }
@@ -62,7 +62,7 @@ public class DynamicArray<String> {
 
     // Some array implementations offer methods like insert (also known as pushBack).
     // Which is like insert, only in does the insert at the end of the array.
-    public void add(String value) {
+    public void add(String value) { // O(1)
 
         if (size == initialCapacity) {
             resize();
@@ -72,7 +72,7 @@ public class DynamicArray<String> {
         size++;
     }
 
-    public void delete(int index) {
+    public void delete(int index) { // O(n)
         // Copy down
         for (int j = index; j < size - 1; j++) {
             data[j] = data[j + 1];
@@ -84,11 +84,11 @@ public class DynamicArray<String> {
         size--;
     }
 
-    public boolean isEmpty() {
+    public boolean isEmpty() { // O(1)
         return size == 0;
     }
 
-    public boolean Contains(String value) {
+    public boolean Contains(String value) { // O(n)
         for (int i = 0; i <= size - 1; i++) {
             String currentValue = (String) data[i];
             if (currentValue.equals(value)) {

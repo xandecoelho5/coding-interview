@@ -6,7 +6,7 @@ import java.util.EmptyStackException;
 
 public class Stack {
 
-    private class Node {
+    private static class Node {
         private final int data;
         private Node next;
         private Node (int data) {

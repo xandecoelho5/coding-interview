@@ -2,7 +2,7 @@ package queue;
 
 public class Queue {
 
-    private class Node {
+    private static class Node {
         private final int data;
         private Node next;
         private Node (int data) {

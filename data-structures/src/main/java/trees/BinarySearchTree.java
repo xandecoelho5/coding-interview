@@ -2,7 +2,7 @@ package trees;
 
 public class BinarySearchTree {
 
-    class Node {
+    static class Node {
         int key;
         String value;
         Node left, right;
@@ -59,7 +59,7 @@ public class BinarySearchTree {
 
         // If null - set it here. We are done.
         if (node == null) {
-            node = new Node(key, value);;
+            node = new Node(key, value);
             return node;
         }
 
@@ -68,7 +68,8 @@ public class BinarySearchTree {
         // that is null and set it there
         if (key < node.key) {
             node.left = insertItem(node.left, key, value);
-        } if (key > node.key) {
+        }
+        if (key > node.key) {
             node.right = insertItem(node.right, key, value);
         }
 

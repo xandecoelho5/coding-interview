@@ -99,6 +99,7 @@ public class LinkedList {
         if (head == null) {
             return;
         }
+
         if (head.data == data) {
             head = head.next;
             return;

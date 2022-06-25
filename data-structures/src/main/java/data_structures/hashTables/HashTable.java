@@ -2,7 +2,7 @@ package data_structures.hashTables;
 
 public class HashTable {
 
-    private final int INITIAL_SIZE = 16;
+    private int initialSize = 16;
     private final HashEntry[] data; // LinkedList
 
     static class HashEntry {
@@ -17,8 +17,13 @@ public class HashTable {
         }
     }
 
+    public HashTable(int size) {
+        this.initialSize = size;
+        data = new HashEntry[initialSize];
+    }
+
     public HashTable() {
-        data = new HashEntry[INITIAL_SIZE];
+        data = new HashEntry[initialSize];
     }
 
     public void put(String key, String value) {
@@ -68,7 +73,7 @@ public class HashTable {
         int hashCode = key.hashCode();
 
         // Convert to index
-        int index = (hashCode & 0x7fffffff) % INITIAL_SIZE;
+        int index = (hashCode & 0x7fffffff) % initialSize;
 
         // Hack to force collision for testing
         if (key.equals("John Smith") || key.equals("Sandra Dee") || key.equals("Tim Lee")) {

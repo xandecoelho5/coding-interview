@@ -25,7 +25,6 @@ public class URLConverter {
                 result[pointer + 2] = '0';
                 pointer = pointer + 3;
             }
-            prettyPrint(result);
             System.out.println("...");
         }
 

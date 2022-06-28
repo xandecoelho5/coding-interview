@@ -1,9 +1,6 @@
 package challenges.arraysAndStringsTest;
 
-import challenges.arraysAndStrings.OneAwayDetector;
-import challenges.arraysAndStrings.PermutationDetector;
-import challenges.arraysAndStrings.URLConverter;
-import challenges.arraysAndStrings.UniqueCharacterDetector;
+import challenges.arraysAndStrings.*;
 import org.junit.Assert;
 import org.junit.Before;
 import org.junit.Test;
@@ -14,6 +11,7 @@ public class ArraysAndStringsTest {
     private PermutationDetector permDetector;
     private URLConverter urlConverter;
     private OneAwayDetector oneAwayDetector;
+    private Compressor compressor;
 
     @Before
     public void SetUp() {
@@ -21,6 +19,7 @@ public class ArraysAndStringsTest {
         permDetector = new PermutationDetector();
         urlConverter = new URLConverter();
         oneAwayDetector = new OneAwayDetector();
+        compressor = new Compressor();
     }
 
     @Test
@@ -65,4 +64,21 @@ public class ArraysAndStringsTest {
 
         Assert.assertFalse(oneAwayDetector.oneAway("pale", "bakeerer"));
     }
+
+    @Test
+    public void Compressor() {
+        // Challenge: Give a string with repeating characters (i.e. "aaabb") write
+        // an algorithm that will compress the string down to the character, followed
+        // by the number of times it appears in the string (i.e "a3b2").
+        // If the compressed string is not smaller than original, return original.
+
+        Assert.assertEquals("a3b2", compressor.compress("aaabb"));
+        Assert.assertEquals("aabb", compressor.compress("aabb"));
+        Assert.assertEquals("ab", compressor.compress("ab"));
+        Assert.assertEquals("abc", compressor.compress("abc"));
+        Assert.assertEquals("z3", compressor.compress("zzz"));
+        Assert.assertEquals("aabbaabb", compressor.compress("aabbaabb")); // not shorter
+    }
+
+
 }

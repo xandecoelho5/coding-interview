@@ -1,6 +1,5 @@
 package data_structures.linkedLists;
 
-import data_structures.linkedLists.LinkedList;
 import org.junit.Assert;
 import org.junit.Before;
 import org.junit.Test;

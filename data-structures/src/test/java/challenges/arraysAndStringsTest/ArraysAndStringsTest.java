@@ -80,5 +80,4 @@ public class ArraysAndStringsTest {
         Assert.assertEquals("aabbaabb", compressor.compress("aabbaabb")); // not shorter
     }
 
-
 }
